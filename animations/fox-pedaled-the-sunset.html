@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e6f3ee">
+  <title>骑向晚霞的狐狸</title>
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+    body { background: #e6f3ee; }
+    svg { display: block; width: 100%; height: 100%; }
+    #tail { transform-origin: 511px 325px; animation: tail-swish 1.4s ease-in-out infinite alternate; }
+    #scarf-end { transform-origin: 621px 274px; animation: scarf-flutter .75s ease-in-out infinite alternate; }
+    #fox-upper { animation: rider-bob .56s ease-in-out infinite alternate; }
+    #road-markings { animation: road-roll 1.05s linear infinite; }
+    #cloud-one { animation: cloud-drift 13s ease-in-out infinite alternate; }
+    #cloud-two { animation: cloud-drift 18s ease-in-out infinite alternate-reverse; }
+    @keyframes tail-swish { from { transform: rotate(-5deg); } to { transform: rotate(7deg); } }
+    @keyframes scarf-flutter { from { transform: rotate(-7deg); } to { transform: rotate(9deg); } }
+    @keyframes rider-bob { from { transform: translateY(0); } to { transform: translateY(3px); } }
+    @keyframes road-roll { to { transform: translateX(-180px); } }
+    @keyframes cloud-drift { from { transform: translateX(-14px); } to { transform: translateX(18px); } }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+    }
+  </style>
+</head>
+<body>
+  <svg id="scene" viewBox="0 0 1200 700" role="img" aria-labelledby="scene-title scene-description">
+    <title id="scene-title">骑向晚霞的狐狸</title>
+    <desc id="scene-description">一只橘色狐狸戴着绿色围巾，沿着乡间道路踩着自行车前进。车轮、踏板、尾巴和云朵不断移动。</desc>
+
+    <rect x="-1000" y="-900" width="3200" height="2600" fill="#e6f3ee"/>
+    <circle id="sun" cx="1030" cy="139" r="72" fill="#f7c879"/>
+    <circle id="sun-halo" cx="1030" cy="139" r="96" fill="none" stroke="#f7c879" stroke-width="2" opacity=".45"/>
+
+    <g id="cloud-one" fill="#fffdf4" opacity=".9">
+      <path d="M147 141c-18 0-29-13-27-27 2-17 16-27 32-25 8-24 42-34 59-10 21-10 46 6 47 27 17-2 29 9 29 22 0 8-6 13-16 13z"/>
+      <path d="M612 82c-13 0-22-9-21-20 1-13 13-20 25-19 7-19 34-24 45-6 17-7 34 7 34 21 13-1 23 7 23 17 0 5-5 7-11 7z" opacity=".7"/>
+    </g>
+    <g id="cloud-two" fill="#fffdf4" opacity=".75">
+      <path d="M871 220c-13 0-23-10-22-21 1-14 14-22 27-20 7-20 36-27 49-7 18-8 38 7 39 22 14-1 23 8 23 18 0 5-5 8-12 8z"/>
+      <path d="M351-178c-13 0-23-10-22-21 1-14 14-22 27-20 7-20 36-27 49-7 18-8 38 7 39 22 14-1 23 8 23 18 0 5-5 8-12 8z"/>
+    </g>
+
+    <path d="M-1000 504Q-658 345-345 456T225 438Q451 352 656 441T1183 412Q1570 300 2200 464V1100H-1000Z" fill="#c8dfce"/>
+    <path d="M-1000 545Q-577 411-260 507T324 473Q566 390 806 485T1423 459Q1761 411 2200 498V1100H-1000Z" fill="#91bea5"/>
+    <path d="M-1000 600Q-584 496-269 558T338 543Q578 478 808 549T1380 527Q1792 480 2200 574V1100H-1000Z" fill="#5e9b83"/>
+
+    <g fill="#327b67" opacity=".85">
+      <path d="M85 589l-9-27 15 20 3-35 5 35 12-16-8 23z"/>
+      <path d="M237 589l-7-21 12 15 4-28 5 27 9-13-6 20z"/>
+      <path d="M950 589l-9-27 15 20 3-35 5 35 12-16-8 23z"/>
+      <path d="M1080 589l-7-21 12 15 4-28 5 27 9-13-6 20z"/>
+    </g>
+    <rect x="-1000" y="609" width="3200" height="1600" fill="#657d78"/>
+    <path d="M-1000 610H2200" stroke="#eff2dc" stroke-width="8"/>
+    <path d="M-1000 620H2200" stroke="#405e5c" stroke-width="3" opacity=".35"/>
+    <g id="road-markings" stroke="#dce4c9" stroke-width="8" stroke-linecap="round" opacity=".85">
+      <path d="M-180 666h76 M0 666h76 M180 666h76 M360 666h76 M540 666h76 M720 666h76 M900 666h76 M1080 666h76 M1260 666h76 M1440 666h76 M1620 666h76"/>
+    </g>
+
+    <ellipse cx="607" cy="618" rx="344" ry="18" fill="#2c5550" opacity=".25"/>
+
+    <g id="rear-wheel" transform="translate(390 513)">
+      <circle r="98" fill="none" stroke="#263d3d" stroke-width="14"/>
+      <circle r="88" fill="none" stroke="#f8f5e8" stroke-width="3"/>
+      <g id="rear-spokes" fill="none" stroke="#aac4b6" stroke-width="2">
+        <path d="M0-85V85 M-85 0H85 M-60-60L60 60 M60-60L-60 60 M-32-79L32 79 M32-79L-32 79 M-79-32L79 32 M79-32L-79 32"/>
+        <circle cx="0" cy="-85" r="5" fill="#f8c779" stroke="none"/>
+      </g>
+      <circle r="12" fill="#284d4b" stroke="#f4dfb3" stroke-width="4"/>
+    </g>
+    <g id="front-wheel" transform="translate(820 513)">
+      <circle r="98" fill="none" stroke="#263d3d" stroke-width="14"/>
+      <circle r="88" fill="none" stroke="#f8f5e8" stroke-width="3"/>
+      <g id="front-spokes" fill="none" stroke="#aac4b6" stroke-width="2">
+        <path d="M0-85V85 M-85 0H85 M-60-60L60 60 M60-60L-60 60 M-32-79L32 79 M32-79L-32 79 M-79-32L79 32 M79-32L-79 32"/>
+        <circle cx="0" cy="-85" r="5" fill="#f8c779" stroke="none"/>
+      </g>
+      <circle r="12" fill="#284d4b" stroke="#f4dfb3" stroke-width="4"/>
+    </g>
+
+    <g id="tail">
+      <path d="M521 322C470 283 430 246 364 257c32 16 27 42 7 59 47 45 107 49 158 32z" fill="#d96b3d" stroke="#9c4c32" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M364 257c32 16 27 42 7 59 18 17 37 28 57 34-7-40-27-69-64-93z" fill="#fff1d6"/>
+      <path d="M450 296c26 9 45 25 60 41" fill="none" stroke="#efa76d" stroke-width="8" stroke-linecap="round"/>
+    </g>
+
+    <path id="far-leg" d="M548 348L620 421 563 513" fill="none" stroke="#a9583c" stroke-width="25" stroke-linecap="round" stroke-linejoin="round"/>
+    <g id="far-shoe" fill="#263f40"><ellipse rx="22" ry="11"/></g>
+
+    <g id="fox-upper">
+      <path d="M524 338c-23-35-14-75 18-97 32-24 75-11 94 22 16 26 19 57 4 81-19 26-83 35-116-6z" fill="#dd7845" stroke="#a95638" stroke-width="5"/>
+      <path d="M593 246c-24 19-30 48-22 77 5 20 20 32 42 35 15-12 28-31 28-51-1-26-17-48-48-61z" fill="#fff0d4"/>
+      <path d="M529 341c31 14 70 12 101-2" fill="none" stroke="#c4653e" stroke-width="9" stroke-linecap="round"/>
+
+      <path d="M627 198l8-78 49 43 35-38 15 69c22 18 31 40 20 59-13 24-43 34-76 28-32-5-58-26-62-50-2-13 2-25 11-33z" fill="#e98248" stroke="#a95739" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M640 137l27 26-29 16z M717 141l7 43-29-16z" fill="#b85c43"/>
+      <path d="M680 233c30 1 51-11 69-19 16-6 31-2 42 8-11 16-31 20-49 21-12 20-33 31-57 27-25-4-38-16-46-36 13 6 26 7 41-1z" fill="#fff0d4"/>
+      <path d="M754 218c14-6 27-4 37 4-6 10-15 12-27 10z" fill="#e98248"/>
+      <path d="M784 221q13-4 15 4-5 12-17 10z" fill="#273b3c"/>
+      <ellipse cx="716" cy="206" rx="6" ry="8" fill="#283c3b"/>
+      <circle cx="718" cy="203" r="2" fill="#fff9ed"/>
+      <path d="M697 222q7 5 17 1" fill="none" stroke="#b85c43" stroke-width="3" stroke-linecap="round"/>
+
+      <path id="scarf-end" d="M627 269c-33-3-48 15-63 39 24-6 41-5 61 1l24-27z" fill="#2c7970" stroke="#194d4b" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M626 260q20 8 44 4l-8 33q-20 8-37-4z" fill="#28746b" stroke="#194d4b" stroke-width="4"/>
+      <path d="M646 287q7 2 14 0" fill="none" stroke="#98c8a6" stroke-width="4" stroke-linecap="round"/>
+    </g>
+
+    <path d="M511 376q26-11 58-3" fill="none" stroke="#263d3d" stroke-width="12" stroke-linecap="round"/>
+    <path d="M539 380l51 133" fill="none" stroke="#284e4d" stroke-width="13" stroke-linecap="round"/>
+    <g fill="none" stroke="#2c6763" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M390 513l145-128 55 128z"/>
+      <path d="M535 385h195L590 513"/>
+      <path d="M390 513h200"/>
+      <path d="M730 385l90 128"/>
+    </g>
+    <path d="M390 513l200 0" fill="none" stroke="#d6b678" stroke-width="3" opacity=".85"/>
+    <path d="M730 385l21-37h43" fill="none" stroke="#294a49" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M781 348q13-1 15 11" fill="none" stroke="#294a49" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="590" cy="513" r="28" fill="#e6f3ee" stroke="#284e4d" stroke-width="8"/>
+    <circle cx="590" cy="513" r="6" fill="#d99a65"/>
+
+    <g id="crank" stroke="#263f40" stroke-linecap="round">
+      <path d="M590 513h31 M590 513h-31" stroke-width="8"/>
+      <path d="M609 513h25 M547 513h25" stroke-width="9"/>
+    </g>
+    <path id="near-leg" d="M571 350L659 428 621 513" fill="none" stroke="#df7844" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+    <g id="near-shoe" fill="#293f3f"><ellipse rx="23" ry="11"/></g>
+
+    <path d="M633 288q36 7 59 36l49 29" fill="none" stroke="#bd613d" stroke-width="27" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M647 285q30 10 51 36l47 28" fill="none" stroke="#e9874d" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M738 352q13 12 29 1" fill="none" stroke="#b95c3b" stroke-width="17" stroke-linecap="round"/>
+    <path d="M762 351h21" fill="none" stroke="#263f40" stroke-width="7" stroke-linecap="round"/>
+  </svg>
+
+  <script>
+    const scene = document.getElementById('scene');
+    const sun = document.getElementById('sun');
+    const sunHalo = document.getElementById('sun-halo');
+    const rearSpokes = document.getElementById('rear-spokes');
+    const frontSpokes = document.getElementById('front-spokes');
+    const crank = document.getElementById('crank');
+    const nearLeg = document.getElementById('near-leg');
+    const farLeg = document.getElementById('far-leg');
+    const nearShoe = document.getElementById('near-shoe');
+    const farShoe = document.getElementById('far-shoe');
+
+    function fitScene() {
+      const ratio = window.innerWidth / window.innerHeight;
+      const width = ratio < 1.2 ? 700 : Math.max(920, 700 * ratio);
+      const height = width / ratio;
+      scene.setAttribute('viewBox', `${600 - width / 2} ${350 - height / 2} ${width} ${height}`);
+      const compact = ratio < 1.2;
+      sun.setAttribute('cx', compact ? 807 : 1030);
+      sun.setAttribute('cy', compact ? -116 : 139);
+      sunHalo.setAttribute('cx', compact ? 807 : 1030);
+      sunHalo.setAttribute('cy', compact ? -116 : 139);
+    }
+
+    function moveLeg(path, shoe, hipX, hipY, footX, footY) {
+      const dx = footX - hipX;
+      const dy = footY - hipY;
+      const distance = Math.hypot(dx, dy);
+      const upper = 117;
+      const lower = 112;
+      const along = (upper * upper - lower * lower + distance * distance) / (2 * distance);
+      const bend = Math.sqrt(Math.max(0, upper * upper - along * along));
+      const kneeX = hipX + along * dx / distance + bend * dy / distance;
+      const kneeY = hipY + along * dy / distance - bend * dx / distance;
+      path.setAttribute('d', `M${hipX} ${hipY}L${kneeX} ${kneeY} ${footX} ${footY}`);
+      shoe.setAttribute('transform', `translate(${footX} ${footY})`);
+    }
+
+    function draw(elapsed) {
+      const wheelAngle = elapsed * .34;
+      const pedalAngle = elapsed * .4;
+      const radians = pedalAngle * Math.PI / 180;
+      const footX = 590 + 31 * Math.cos(radians);
+      const footY = 513 + 31 * Math.sin(radians);
+      rearSpokes.setAttribute('transform', `rotate(${wheelAngle})`);
+      frontSpokes.setAttribute('transform', `rotate(${wheelAngle})`);
+      crank.setAttribute('transform', `rotate(${pedalAngle} 590 513)`);
+      moveLeg(nearLeg, nearShoe, 571, 350, footX, footY);
+      moveLeg(farLeg, farShoe, 548, 348, 1180 - footX, 1026 - footY);
+    }
+
+    fitScene();
+    window.addEventListener('resize', fitScene);
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (reducedMotion.matches) {
+      draw(0);
+    } else {
+      let start;
+      function animate(now) {
+        if (start === undefined) start = now;
+        draw(now - start);
+        requestAnimationFrame(animate);
+      }
+      requestAnimationFrame(animate);
+    }
+  </script>
+</body>
+</html>

@@ -8,6 +8,9 @@
 |---|---|---|---|---|---|
 | Pelican on a Bicycle | `animations/pelican-on-bicycle.html` | 待补充 | 待补充 | 待补充 | 无 / 待补充 |
 | Kitsune Express | `animations/kitsune-express-fox-on-bicycle.html` | 待补充 | 待补充 | 待补充 | 无 / 待补充 |
+| Pelican Sunset Cruise | `animations/pelican-sunset-cruise.html` | 待补充 | 待补充 | 待补充 | 无 / 待补充 |
+| The Fox Who Pedaled the Sunset | `animations/fox-pedaled-the-sunset.html` | 待补充 | 待补充 | 待补充 | 无 / 待补充 |
+| Foxcycle | `animations/foxcycle.html` | 待补充 | 待补充 | 待补充 | 无 / 待补充 |
 
 ## Entry template
 

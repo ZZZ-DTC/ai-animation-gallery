@@ -25,14 +25,17 @@ ai-animation-gallery/
 ├── index.html                         # GitHub Pages 首页
 ├── animations/                        # 可运行的原始 HTML 动画
 │   ├── pelican-on-bicycle.html
-│   └── kitsune-express-fox-on-bicycle.html
+│   ├── kitsune-express-fox-on-bicycle.html
+│   ├── pelican-sunset-cruise.html
+│   ├── fox-pedaled-the-sunset.html
+│   └── foxcycle.html
 ├── assets/                            # GIF 快照
 │   ├── pelican-on-bicycle.gif
 │   └── kitsune-express-fox-on-bicycle.gif
 └── metadata/
     └── models.md                      # 模型、提示词和评价记录模板
-```
 
+```
 ## GitHub Pages 部署
 
 1. 创建 GitHub 仓库，推荐名称：`ai-animation-gallery`
@@ -55,18 +58,18 @@ git push -u origin main
 
 ## 记录新作品
 
-建议每个新作品至少保存：
-
 - 一个可运行的 HTML 文件
-- 一个统一命名的预览图或 GIF
+- 一个统一命名的预览图或 GIF（如果需要）
 - 使用的 AI 模型和版本
 - 生成日期
 - 完整提示词
 - 人工修改内容
 - 对动画质量、视觉效果和代码质量的评价
 
+新增作品也可以先只保留 HTML 源文件；首页会直接嵌入实时动画预览。
+
 具体字段见 [`metadata/models.md`](metadata/models.md)。
 
 ## 说明
 
-当前两个 HTML 均为单文件动画，图形资源内嵌在 SVG 中，不依赖外部图片或 JavaScript 资源，适合直接通过 GitHub Pages 发布。
+当前作品均为单文件 HTML 动画，图形资源内嵌在 SVG 中；部分作品使用 CSS / SMIL，部分作品使用内嵌 JavaScript，不依赖外部图片或脚本资源，适合直接通过 GitHub Pages 发布。
